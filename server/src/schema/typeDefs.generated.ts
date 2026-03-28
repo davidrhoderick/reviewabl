@@ -1,0 +1,80 @@
+import type { DocumentNode } from "graphql";
+export const typeDefs = {
+	kind: "Document",
+	definitions: [
+		{
+			name: { kind: "Name", value: "Query" },
+			kind: "ObjectTypeDefinition",
+			fields: [
+				{
+					kind: "FieldDefinition",
+					name: { kind: "Name", value: "helloWorld" },
+					arguments: [
+						{
+							kind: "InputValueDefinition",
+							name: { kind: "Name", value: "name" },
+							type: {
+								kind: "NamedType",
+								name: { kind: "Name", value: "String" },
+							},
+							directives: [],
+						},
+					],
+					type: {
+						kind: "NonNullType",
+						type: {
+							kind: "NamedType",
+							name: { kind: "Name", value: "String" },
+						},
+					},
+					directives: [],
+				},
+			],
+			directives: [],
+			interfaces: [],
+		},
+		{
+			name: { kind: "Name", value: "Mutation" },
+			kind: "ObjectTypeDefinition",
+			fields: [
+				{
+					kind: "FieldDefinition",
+					name: { kind: "Name", value: "goodbyeWorld" },
+					arguments: [
+						{
+							kind: "InputValueDefinition",
+							name: { kind: "Name", value: "name" },
+							type: {
+								kind: "NamedType",
+								name: { kind: "Name", value: "String" },
+							},
+							directives: [],
+						},
+					],
+					type: { kind: "NamedType", name: { kind: "Name", value: "String" } },
+					directives: [],
+				},
+			],
+			directives: [],
+			interfaces: [],
+		},
+		{
+			kind: "SchemaDefinition",
+			operationTypes: [
+				{
+					kind: "OperationTypeDefinition",
+					type: { kind: "NamedType", name: { kind: "Name", value: "Query" } },
+					operation: "query",
+				},
+				{
+					kind: "OperationTypeDefinition",
+					type: {
+						kind: "NamedType",
+						name: { kind: "Name", value: "Mutation" },
+					},
+					operation: "mutation",
+				},
+			],
+		},
+	],
+} as unknown as DocumentNode;

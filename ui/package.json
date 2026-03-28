@@ -1,0 +1,44 @@
+{
+  "name": "@reviewabl/ui",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "cf-typegen": "wrangler types",
+    "deploy": "npm run build && wrangler deploy",
+    "dev": "react-router dev",
+    "postinstall": "npm run cf-typegen",
+    "preview": "npm run build && vite preview",
+    "typecheck": "npm run cf-typegen && react-router typegen && tsc -b",
+    "codegen": "graphql-codegen --watch"
+  },
+  "dependencies": {
+    "@apollo/client": "^4.1.6",
+    "@mantine/core": "^8.3.18",
+    "@mantine/hooks": "^8.3.18",
+    "@react-router/fs-routes": "^7.13.2",
+    "graphql": "^16.13.2",
+    "isbot": "^5.1.31",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router": "^7.10.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.13.5",
+    "@graphql-codegen/cli": "^6.2.1",
+    "@parcel/watcher": "^2.5.6",
+    "@react-router/dev": "^7.10.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/node": "^22.19.15",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "postcss": "^8.5.8",
+    "postcss-preset-mantine": "^1.18.0",
+    "postcss-simple-vars": "^7.0.1",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7",
+    "vite-tsconfig-paths": "^5.1.4",
+    "wrangler": "^4.78.0"
+  }
+}

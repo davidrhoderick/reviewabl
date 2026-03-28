@@ -1,0 +1,19 @@
+{
+	"name": "reviewabl",
+	"version": "1.0.0",
+	"description": "",
+	"license": "ISC",
+	"author": "",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"workspaces": [
+		"server",
+		"ui"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "2.4.9"
+	}
+}
